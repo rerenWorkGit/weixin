@@ -28,8 +28,45 @@
       </h1>
 
       <ol>
-        <li>查看尚未暂存的文件更新了哪些部分，不加参数直接输入 git diff<br>
+        <li>
+        查看尚未暂存的文件更新了哪些部分，不加参数直接输入 <div>git diff</div>
         此命令比较的是工作目录（working tree）和暂存区域快照(index)之间的差异，也就是修改之后还没有暂存起来的变化内容。</li>
+        <li>
+        查看已经暂存起来的文件(staged)和上次提交时的快照之间(HEAD)的差异
+        <div>git diff --cached</div>
+        <div>git diff --staged</div>
+        显示的是下一次commit时会提交到HEAD的内容(不带-a情况下)
+        </li>
+        <li>
+          显示工作版本(Working tree)和HEAD的差别<div>git diff HEAD</div>
+        </li>
+        <li>
+          直接将两个分支上最新的提交做diff<div>git diff topic master 或 git diff topic..master</div>
+        </li>
+        <li>
+          输出自topic和master分别开发以来，master分支上的changed。
+          <div>git diff topic...master</div>
+          <div>Changes that occurred on the master branch since when the topic branch was started off it</div>
+        </li>
+        <li>
+          查看简单的diff结果，可以加上--stat参数
+          <div>git diff --stat</div>
+        </li>
+        <li>
+          查看当前目录和另外一个分支的差别
+          <div>git diff test</div>
+          显示当前目录和另一个叫'test'分支的差别
+          <div>git diff HEAD -- ./lib</div>
+          显示当前目录下的lib目录和上次提交之间的差别（更准确的说是在当前分支下）
+        </li>
+        <li>
+          比较上次提交commit和上上次提交
+          <div>git diff HEAD^ HEAD</div>
+        </li>
+        <li>
+          比较两个历史版本之间的差异
+          <div>git diff SHA1 SHA2</div>
+        </li>
       </ol>
 
       <footer class="site-footer">
